@@ -10,25 +10,46 @@ public class Runner {
         //  NOT: OnlineKitapMagazasi'nın metodlarını kullanabilmek için, nesnesini oluşturmamız şart.
         //  Sadece static metodların nesne oluşturmadan kullanılabildiğini unutmayın!
 
+        OnlineKitapMagazasi kitapMagazasi=new OnlineKitapMagazasi();
         Scanner scanner = new Scanner(System.in);
+        Scanner scannerInt = new Scanner(System.in);
+
         int secim;
 
-        do
-        {
+        do {
             // Kullanıcı bir seçenek belirlediğinde, ilgili işlemi gerçekleştirmek için uygun methodları çağırın.
             // Programın sürekli çalışmasını sağlayın, yani kullanıcı çıkış seçeneğini seçene kadar program çalışmaya devam etmelidir.
             // Müşteri farklı bir seçenek seçtiğinde "Geçersiz bir seçim yaptınız. Lütfen tekrar deneyin." mesajı almalıdır.
+            System.out.println("============ Online Kitap Mağazası ============");
 
-            //  kitapMagazasi.kitapEkle();
+            System.out.println("\n1. Kitap Ekle" +
+                    "\n2. Numarasıyla Kitap Sil" +
+                    "\n3. Tüm Kitapları Listele" +
+                    "\n0. Çıkış");
+            System.out.print("Seçiminizi yapınız: ");
 
-            //  kitapMagazasi.kitapSil();
+            secim=scannerInt.nextInt();
 
-            //  kitapMagazasi.kitapListele();
+            switch (secim) {
+                case 1:
+                    kitapMagazasi.kitapEkle();
+                    break;
 
-            //  System.out.println("Program sonlandırılıyor.");
+                case 2:
+                    kitapMagazasi.kitapSil();
+                    break;
 
-            //  System.out.println("Geçersiz bir seçim yaptınız. Lütfen tekrar deneyin.\n");
-        }while ();
+                case 3:
+                    kitapMagazasi.kitapListele();
+                    break;
+
+                case 0:
+                    System.out.println("Program sonlandırılıyor.");
+
+                default:
+                    System.out.println("Geçersiz bir seçim yaptınız. Lütfen tekrar deneyin.\n");
+            }
+        } while (secim != 0);
     }
 }
 
