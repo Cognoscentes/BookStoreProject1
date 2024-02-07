@@ -11,8 +11,8 @@ public class Runner {
         //  Sadece static metodların nesne oluşturmadan kullanılabildiğini unutmayın!
 
         OnlineKitapMagazasi kitapMagazasi=new OnlineKitapMagazasi();
+
         Scanner scanner = new Scanner(System.in);
-        Scanner scannerInt = new Scanner(System.in);
 
         int secim;
 
@@ -28,7 +28,7 @@ public class Runner {
                     "\n0. Çıkış");
             System.out.print("Seçiminizi yapınız: ");
 
-            secim=scannerInt.nextInt();
+            secim=scanner.nextInt();
 
             switch (secim) {
                 case 1:
